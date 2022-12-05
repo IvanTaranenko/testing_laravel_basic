@@ -1,6 +1,6 @@
 TESTING:
 
--regular methods
--working with different types Tests
--testing with Dusk
--test authenticate
+-Regular methods	
+-Working with different types Tests
+-Testing with Dusk
+-Test authenticate
