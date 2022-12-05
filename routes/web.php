@@ -20,3 +20,4 @@ Route::get('/about', function () {
     return 'About Page';
 });
 Route::get('/products',[\App\Http\Controllers\ProductController::class,'index']);
+Route::get('/about-us',[\App\Http\Controllers\ProductController::class,'about'])->name('about-us');

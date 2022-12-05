@@ -10,11 +10,18 @@ use Tests\TestCase;
 class ProductTest extends TestCase
 {
     use RefreshDatabase;
+
     /**
      * A basic feature test example.
      *
      * @return void
      */
+//    public function test_click()
+//    {
+//        $this->visit('/products')
+//            ->click('About Us')
+//            ->seePageIs('/about-us');
+//    }
     public function test_example()
     {
         $response = $this->get('/');
@@ -32,7 +39,21 @@ class ProductTest extends TestCase
 
     public function test_product_has_name()
     {
-      $product = Product::factory()->create();
-      $this->assertNotEmpty($product->name);
+        $product = Product::factory()->create();
+        $this->assertNotEmpty($product->name);
     }
+
+    public function test_product_are_empty()
+    {
+        $response = $this->get('/products');
+        $response->assertSee('No products');
+    }
+    public function test_product_are_not_empty()
+    {
+        $product = Product::factory()->create();
+        $response = $this->get('/products');
+        $response->assertDontSee('No products');
+    }
+
+
 }

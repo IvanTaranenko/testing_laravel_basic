@@ -9,5 +9,12 @@
 </head>
 <body>
 <h1>Products index</h1>
+<a href="/about-us">About Us</a>
+@forelse($products as $product)
+    <p>{{$product->name}}</p>
+
+@empty
+    <p>No products</p>
+@endforelse
 </body>
 </html>
