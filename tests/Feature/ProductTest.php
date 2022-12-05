@@ -1,10 +1,8 @@
 <?php
 
 namespace Tests\Feature;
-
 use App\Models\Product;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ProductTest extends TestCase
@@ -16,12 +14,8 @@ class ProductTest extends TestCase
      *
      * @return void
      */
-//    public function test_click()
-//    {
-//        $this->visit('/products')
-//            ->click('About Us')
-//            ->seePageIs('/about-us');
-//    }
+
+
     public function test_example()
     {
         $response = $this->get('/');
@@ -48,6 +42,7 @@ class ProductTest extends TestCase
         $response = $this->get('/products');
         $response->assertSee('No products');
     }
+
     public function test_product_are_not_empty()
     {
         $product = Product::factory()->create();
