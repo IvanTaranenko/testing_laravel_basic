@@ -25,3 +25,11 @@ Route::get('/about-us',[\App\Http\Controllers\ProductController::class,'about'])
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
+Route::get('/alpha', function () {
+    return view('alpha');
+});
+Route::get('/beta', function () {
+    return view('beta');
+});
